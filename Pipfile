@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 checkio-client = "*"
+mypy = "*"
+flake8 = "*"
+pyinstrument = "*"
 
 [dev-packages]
 
