@@ -11,8 +11,20 @@
 # 
 # END_DESC
 
+import re
+
+
 def words_order(text: str, words: list) -> bool:
-    # your code here
+    indexes = []
+
+    for word in words:
+        match = re.search(r'\b{}\b'.format(word), text)
+        if match:
+            indexes.append(match.start())
+
+    if len(set(indexes)) == len(words) and sorted(indexes) == indexes:
+        return True
+
     return False
 
 

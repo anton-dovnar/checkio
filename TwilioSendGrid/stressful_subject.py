@@ -2,11 +2,21 @@
 
 # 
 # END_DESC
+import re
 
 def is_stressful(subj):
     """
         recognize stressful subject
     """
+    if subj.isupper() or subj.endswith('!!!'):
+        return True
+
+    patterns = [r'(\b[help\!\-\.]{4,}\b)', r'(\b[asap\!\-\.]{4,}\b)', r'(\b[urgent\!\-\.]{4,}\b)']
+
+    for pattern in patterns:
+        if re.search(pattern, subj, flags=re.IGNORECASE):
+            return True
+
     return False
 
 if __name__ == '__main__':

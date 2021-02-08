@@ -13,8 +13,9 @@
 
 from typing import List
 
+
 def sort_by_ext(files: List[str]) -> List[str]:
-    # your code here
+    files = sorted(sorted(files), key=lambda f: f.split('.')[-1] if f.split('.')[-2] else f.split('.')[0])
     return files
 
 

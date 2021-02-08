@@ -10,9 +10,14 @@
 # 
 # 
 # END_DESC
+import re
 
 def is_all_upper(text: str) -> bool:
-    # your code here
+    match = re.search(r'[a-zA-Z]', text)
+
+    if match and text.upper() == text:
+        return True
+
     return False
 
 

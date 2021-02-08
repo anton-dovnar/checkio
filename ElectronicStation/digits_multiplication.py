@@ -14,8 +14,14 @@
 # END_DESC
 
 def checkio(number: int) -> int:
+    count = 1
 
-    return 1
+    for c in str(number):
+        num = int(c)
+        if num != 0:
+            count *= num
+
+    return count
 
 
 if __name__ == '__main__':
