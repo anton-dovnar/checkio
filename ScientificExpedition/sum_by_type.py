@@ -14,8 +14,16 @@
 from typing import Tuple
 
 def sum_by_types(items: list) -> Tuple[str, int]:
-    # your code here
-    return ('', 0)
+    text = ''
+    count = 0
+
+    for i in items:
+        if isinstance(i, str):
+            text += i
+        else:
+            count += i
+
+    return text, count
 
 
 if __name__ == '__main__':
