@@ -16,6 +16,7 @@
 
 from typing import List
 
+
 def checkio(data: List[int]) -> [int, float]:
     length = len(data)
     data = sorted(data)

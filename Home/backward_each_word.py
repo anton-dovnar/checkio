@@ -12,6 +12,7 @@
 # END_DESC
 import re
 
+
 def backward_string_by_word(text: str) -> str:
     return ' '.join(i[::-1] for i in re.split(r'\W', text))
 

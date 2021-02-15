@@ -17,6 +17,7 @@
 
 from typing import Iterable
 
+
 def expand_intervals(items: Iterable) -> Iterable:
     # your code here
     return []

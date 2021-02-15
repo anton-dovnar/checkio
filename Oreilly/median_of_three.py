@@ -13,8 +13,9 @@
 # 
 # END_DESC
 
-from typing import Iterable
 from statistics import median
+from typing import Iterable
+
 
 def median_three(els: Iterable[int]) -> Iterable[int]:
     if len(els) > 2:

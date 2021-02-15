@@ -4,6 +4,7 @@
 # END_DESC
 import re
 
+
 def is_stressful(subj):
     """
         recognize stressful subject

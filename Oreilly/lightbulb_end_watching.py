@@ -58,6 +58,7 @@
 from datetime import datetime
 from typing import List
 
+
 def sum_light(els: List[datetime]) -> int:
     """
         how long the light bulb has been turned on
@@ -118,6 +119,7 @@ if __name__ == '__main__':
 
 from datetime import datetime
 from typing import List, Optional
+
 
 def sum_light(els: List[datetime], start_watching: Optional[datetime] = None) -> int:
     """
@@ -210,6 +212,7 @@ if __name__ == '__main__':
 
 from datetime import datetime
 from typing import List, Optional
+
 
 def sum_light(els: List[datetime], start_watching: Optional[datetime] = None, end_watching: Optional[datetime] = None) -> int:
     """

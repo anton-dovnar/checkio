@@ -12,7 +12,8 @@
 # 
 # END_DESC
 
-from typing import Set, Tuple, List, Dict
+from typing import Dict, List, Set, Tuple
+
 
 def power_plants(network: Set[Tuple[str, str]], ranges: List[int]) -> Dict[str, int]:
     return {}

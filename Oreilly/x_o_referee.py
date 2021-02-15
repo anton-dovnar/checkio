@@ -22,6 +22,7 @@
 
 from typing import List
 
+
 def checkio(game_result: List[str]) -> str:
     # Horizontal
     for i in range(3):

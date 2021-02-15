@@ -18,6 +18,7 @@
 from datetime import datetime
 from typing import List
 
+
 def sum_light(els: List[datetime]) -> int:
     """
         how long the light bulb has been turned on

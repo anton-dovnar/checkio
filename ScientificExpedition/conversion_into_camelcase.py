@@ -15,8 +15,7 @@
 # END_DESC
 
 def to_camel_case(name):
-    #replace this for solution
-    return name
+    return ''.join([w.title() for w in name.split('_')])
 
 if __name__ == '__main__':
     print("Example:")

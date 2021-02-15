@@ -16,7 +16,8 @@
 # END_DESC
 
 from datetime import datetime, timedelta
-from typing import List, Optional, Union, Tuple
+from typing import List, Optional, Tuple, Union
+
 
 def sum_light(els: List[Union[datetime, Tuple[datetime, int]]],
         start_watching: Optional[datetime] = None,

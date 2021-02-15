@@ -12,6 +12,7 @@
 # END_DESC
 import re
 
+
 def is_acceptable_password(password: str) -> bool:
     match = re.search(r'password', password, flags=re.IGNORECASE)
 

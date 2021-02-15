@@ -28,6 +28,7 @@
 from collections import Counter
 from operator import itemgetter
 
+
 def checkio(data: list) -> list:
     x = Counter(data).most_common()
 

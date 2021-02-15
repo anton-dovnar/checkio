@@ -17,9 +17,9 @@
 # 
 # END_DESC
 
-from typing import List
 from collections import defaultdict
 from math import inf
+from typing import List
 
 
 def cheapest_flight(costs: List, a: str, b: str) -> int:

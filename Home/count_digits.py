@@ -10,6 +10,7 @@
 # END_DESC
 import re
 
+
 def count_digits(text: str) -> int:
     return len(re.findall(r'[\d]', text))
 

@@ -13,6 +13,7 @@
 
 from typing import Tuple
 
+
 def sum_by_types(items: list) -> Tuple[str, int]:
     text = ''
     count = 0

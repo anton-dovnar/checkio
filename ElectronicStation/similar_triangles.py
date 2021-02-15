@@ -9,6 +9,7 @@
 # END_DESC
 
 from typing import List, Tuple
+
 Coords = List[Tuple[int, int]]
 
 

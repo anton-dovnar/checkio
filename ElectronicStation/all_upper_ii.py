@@ -12,6 +12,7 @@
 # END_DESC
 import re
 
+
 def is_all_upper(text: str) -> bool:
     match = re.search(r'[a-zA-Z]', text)
 

@@ -12,6 +12,8 @@
 # END_DESC
 
 from typing import Iterable
+
+
 def is_ascending(items: Iterable[int]) -> bool:
     if len(items) > 1:
         return True if sorted(items) == items and min(items) != max(items) else False

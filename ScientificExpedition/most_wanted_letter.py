@@ -15,11 +15,50 @@
 # 
 # 
 # END_DESC
+import bisect
+import re
+from collections import Counter, defaultdict
+from itertools import takewhile
+from operator import itemgetter
+from string import ascii_letters
+
 
 def checkio(text: str) -> str:
+    only_letters = re.findall(r'[a-zA-Z]+', text)
+    c = Counter(''.join(only_letters).lower())
+    max_val = c.most_common(1)[0][1]
+    multiple_vals = list(takewhile(lambda x: x[1] == max_val, c.most_common()))
+    return sorted(multiple_vals, key=itemgetter(0))[0][0]
 
-    #replace this for solution
-    return 'a'
+
+# def checkio(text: str) -> str:
+#     keys = defaultdict(int)
+
+#     for l in text.lower():
+#         if l in ascii_letters:
+#             keys[l] += 1
+
+#     max_val = max(keys.values())
+#     return sorted([k for k, v in keys.items() if v == max_val])[0]
+
+
+# def checkio(text: str) -> str:
+#     keys = defaultdict(int)
+
+#     for l in text.lower():
+#         if l in ascii_letters:
+#             keys[l] += 1
+
+#     max_val = max(keys.values())
+#     sorted_list = []
+
+#     for k, v in keys.items():
+#         if v == max_val:
+#             bisect.insort(sorted_list, k)
+
+#     return sorted_list[0]
+
+
 
 if __name__ == '__main__':
     print("Example:")

@@ -10,8 +10,8 @@
 #
 #
 # END_DESC
-from typing import Iterable
 from textwrap import wrap
+from typing import Iterable
 
 
 def split_pairs(a: str) -> Iterable:

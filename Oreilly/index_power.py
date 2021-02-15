@@ -19,6 +19,7 @@
 # END_DESC
 import math
 
+
 def index_power(array: list, n: int) -> int:
     """
         Find Nth power of the element with index N.

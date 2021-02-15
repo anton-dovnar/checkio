@@ -15,8 +15,17 @@
 # END_DESC
 
 def from_camel_case(name):
-    #replace this for solution
-    return name
+    python_fn = ''
+
+    for idx, val in enumerate(name):
+        if idx == 0:
+            python_fn += val.lower()
+        elif val.isupper():
+            python_fn += f'_{val.lower()}'
+        else:
+            python_fn += val
+
+    return python_fn
 
 if __name__ == '__main__':
     print("Example:")

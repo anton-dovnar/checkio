@@ -35,6 +35,7 @@
 
 from typing import List
 
+
 def checkio(matrix: List[List[int]]) -> bool:
     #replace this for solution
     return True or False
