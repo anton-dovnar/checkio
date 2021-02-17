@@ -4,22 +4,34 @@
 # - the output format should be 'hh:mm a.m.' (for hours before midday) or 'hh:mm p.m.' (for hours after midday)
 # - if hours is less than 10 - don't write a '0' before it. For example: '9:05 a.m.'
 # Here you can find some useful information about the12-hour format.
-# 
-# 
-# 
+#
+#
+#
 # Input:Time in a 24-hour format (as a string).
-# 
+#
 # Output:Time in a 12-hour format (as a string).
-# 
+#
 # Precondition:
 # '00:00'<= time<= '23:59'
-# 
-# 
+#
+#
 # END_DESC
 
 def time_converter(time):
-    #replace this for solution
-    return time
+    hours, minutes = time.split(':')
+
+    if (hours := int(hours)) >= 12:
+        if hours > 12:
+            hours -= 12
+
+        time_format = f'{hours}:{minutes} p.m.'
+    else:
+        if hours == 0:
+            hours += 12
+
+        time_format = f'{hours}:{minutes} a.m.'
+
+    return time_format
 
 if __name__ == '__main__':
     print("Example:")
