@@ -45,8 +45,21 @@
 # END_DESC
 
 def yaml(a):
-    # your code here
-    return None
+    new_dict = {}
+    items = a.split('\n')
+
+    for i in sorted(items):
+        if i:
+            key, val = i.split(':')
+
+            try:
+                val = int(val)
+            except ValueError:
+                val = val.strip()
+
+            new_dict[key] = val
+
+    return new_dict
 
 
 if __name__ == '__main__':

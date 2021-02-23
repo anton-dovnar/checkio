@@ -18,10 +18,11 @@
 # 
 # 
 # END_DESC
+import re
+
 
 def find_message(message: str) -> str:
-    # your code here
-    return None
+    return ''.join(re.findall(r'[A-Z]', message))
 
 
 if __name__ == '__main__':
