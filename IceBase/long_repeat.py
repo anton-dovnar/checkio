@@ -10,12 +10,18 @@
 # 
 # 
 # END_DESC
+import re
+
 
 def long_repeat(line: str) -> int:
     """
         length the longest substring that consists of the same char
     """
-    # your code here
+    if line:
+        pattern = re.compile(r'(\w)\1+')
+        matches = [match.group() for match in pattern.finditer(line)]
+        return len(max(matches, key=len)) if matches else 1
+
     return 0
 
 if __name__ == '__main__':
