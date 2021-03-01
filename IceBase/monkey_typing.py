@@ -2,9 +2,20 @@
 
 # p.quote-source {        float: right;        font-size: 10px;    }
 # END_DESC
+import re
+
 
 def count_words(text: str, words: set) -> int:
-    return 0
+    count = 0
+
+    for word in words:
+        pattern = r'({})'.format(word)
+        match = re.search(pattern, text, re.I)
+
+        if match:
+            count += 1
+
+    return count
 
 
 if __name__ == '__main__':

@@ -8,10 +8,11 @@
 # 
 # 
 # END_DESC
+import re
+
 
 def find_quotes(a):
-    # your code here
-    return None
+    return re.findall(r'"([A-Za-z0-9_\- \']*)"', a)
 
 
 if __name__ == '__main__':
@@ -19,6 +20,7 @@ if __name__ == '__main__':
     print(find_quotes('"Greetings"'))
 
     # These "asserts" are used for self-checking and not for an auto-testing
+    assert find_quotes('"this" doesn\'t make any "sense"') == ['this', 'sense']
     assert find_quotes('"Greetings"') == ['Greetings']
     assert find_quotes('Hi') == []
     assert find_quotes('good morning mister "superman"') == ['superman']

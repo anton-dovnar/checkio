@@ -30,9 +30,9 @@ MORSE = {'a': '.-',    'b': '-...',  'c': '-.-.',
          '7': '--...', '8': '---..', '9': '----.'
         }
 
+
 def morse_encoder(text):
-    #replace this for solution
-    return text
+    return ' '.join([MORSE[l.lower()] if l != ' ' else ' ' for l in text])
 
 if __name__ == '__main__':
     print("Example:")
