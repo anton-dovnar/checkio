@@ -19,7 +19,7 @@
 # END_DESC
 
 def checkio(*args):
-    return 0
+    return max(args) - min(args) if args else 0
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
