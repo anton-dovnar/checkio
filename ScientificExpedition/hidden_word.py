@@ -62,12 +62,42 @@
 # 
 # 
 # END_DESC
+import re
+
 
 def checkio(text, word):
-    return [1, 1, 1, 4]
+    lines = [''.join(l.lower().split()) for l in text.split('\n')]
+    pattern = r'{}'.format(word)
+
+    # Searching for match in x axis (left to right)
+    for key, value in enumerate(lines, start=1):
+        match = re.search(pattern, value)
+
+        if match:
+            return [key, match.start() + 1, key, match.end()]
+
+    words_y = []
+    # Searching for match in y axis (up to bottom)
+    for k in range(len(max(lines, key=len))):
+        word = ''
+        for j in (complete_word := range(len(lines))):
+            try:
+                word += lines[j][k]
+            except IndexError:
+                pass
+
+            if j == complete_word.stop - 1:
+                words_y.append(word)
+                word = ''
+
+    for key, value in enumerate(words_y, start=1):
+        match = re.search(pattern, value)
+        if match:
+            return [match.start() + 1, key, match.end(), key]
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
+    assert checkio('xa\nxb\nx', 'ab') == [1, 2, 2, 2]
     assert checkio("""DREAMING of apples on a wall,
 And dreaming often, dear,
 I dreamed that, if I counted all,
