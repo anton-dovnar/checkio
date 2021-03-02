@@ -20,8 +20,12 @@
 def i_love_python():
     """
         Let's explain why do we love Python.
+        Hello, I'm 22 years old python programmer.
+        I want to become a part of one of the biggest tech company
+        and travel around the world.
+        ** Belarus, Minsk **
     """
-    return "I love Python"
+    return "I love Python!"
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
