@@ -1,26 +1,47 @@
 #!/home/fode4cun/.local/share/virtualenvs/checkio-ufRDicT7/bin/checkio --domain=py run reverse-every-ascending
 
 # Create and return a new iterable that contains the same elements as the argument iterable items, but with the reversed order of the elements inside every maximal strictly ascending sublist. This function should not modify the contents of the original iterable.
-# 
+#
 # Input:Iterable
-# 
+#
 # Output:Iterable
-# 
+#
 # Precondition:Iterable contains only ints
-# 
+#
 # The mission was taken from Python CCPS 109 Fall 2018. It’s being taught for Ryerson Chang School of Continuing Education byIlkka Kokkarinen
-# 
-# 
+#
+#
 # END_DESC
+from collections import deque
+
 
 def reverse_ascending(items):
-    # your code here
-    return None
+    if items:
+        result = []
+        sublist_queue = deque()
+        largest = float('-inf')
+
+        for el in items:
+            if el > largest:
+                largest = el
+                sublist_queue.appendleft(el)
+            else:
+                result.extend(sublist_queue)
+                sublist_queue.clear()
+                largest = el
+                sublist_queue.append(el)
+
+        if sublist_queue:
+            result.extend(sublist_queue)
+
+        return result
+
+    return items
 
 
 if __name__ == '__main__':
     print("Example:")
-    print(reverse_ascending([1, 2, 3, 4, 5]))
+    # print(reverse_ascending([1, 2, 3, 4, 5]))
 
     # These "asserts" are used for self-checking and not for an auto-testing
     assert list(reverse_ascending([1, 2, 3, 4, 5])) == [5, 4, 3, 2, 1]
